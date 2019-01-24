@@ -1,21 +1,25 @@
 {
-  "name": "Final Round Blog",
+  "name": "final-round-blog",
   "description": "Blog for Final Round Esports",
   "version": "0.1.0",
   "author": "Drew Bolles <drewbolles@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.0.76",
-    "gatsby-image": "^2.0.20",
-    "gatsby-plugin-manifest": "^2.0.9",
-    "gatsby-plugin-offline": "^2.0.16",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.0.96",
+    "gatsby-image": "^2.0.27",
+    "gatsby-plugin-manifest": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-sharp": "^2.0.14",
-    "gatsby-source-filesystem": "^2.0.8",
-    "gatsby-transformer-sharp": "^2.1.8",
+    "gatsby-plugin-sharp": "^2.0.18",
+    "gatsby-plugin-styled-components": "^3.0.4",
+    "gatsby-source-filesystem": "^2.0.17",
+    "gatsby-transformer-remark": "^2.2.0",
+    "gatsby-transformer-sharp": "^2.1.12",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.3"
   },
   "keywords": [
     "gatsby"
@@ -28,6 +32,7 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "devDependencies": {
-    "prettier": "^1.15.2"
+    "normalize.css": "^8.0.1",
+    "prettier": "^1.16.1"
   }
 }
