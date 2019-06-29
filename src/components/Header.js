@@ -1,33 +1,21 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Container from './Container';
+import Logo from './Logo';
 
 const StyledHeader = styled.header`
   height: 56px;
   margin-bottom: 24px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #f1f1f1;
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle = '' }) => (
   <StyledHeader>
-    <Container>
-      <h1 className="site-title" style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </Container>
+    <Logo />
   </StyledHeader>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
-};
 
 export default Header;

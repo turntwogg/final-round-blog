@@ -1,19 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider, css } from 'styled-components';
 
-import themeContext, { theme } from '../utils/theme';
+import { theme } from '../utils/theme';
 
 const StyledApp = styled.div`
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  ${props => css`
+    border-top: 4px solid ${props.theme.colors.primary};
+  `}
 `;
 
 const App = ({ children }) => {
   return (
-    <themeContext.Provider value={theme}>
+    <ThemeProvider theme={theme}>
       <StyledApp>{children}</StyledApp>
-    </themeContext.Provider>
+    </ThemeProvider>
   );
 };
 

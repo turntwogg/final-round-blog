@@ -1,15 +1,12 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
-
-import { useTheme } from '../utils/theme';
 
 const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  ${props => css`
-    max-width: ${props.theme.maxWidth}px;
-    padding: 0 ${props.theme.baseSpacingUnit}px;
+  ${({ theme }) => css`
+    max-width: ${theme.maxWidth}px;
+    padding: 0 ${theme.baseSpacingUnit}px;
   `};
 `;
 
-export default useTheme(Container);
+export default Container;

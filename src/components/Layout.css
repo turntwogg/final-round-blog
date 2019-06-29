@@ -10,9 +10,20 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
+  line-height: 1.66;
+  color: #212121;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway';
 }
 
 h1,
@@ -31,7 +42,6 @@ blockquote {
 
 a {
   text-decoration: none;
-  color: #5c1f46;
 }
 
 img {

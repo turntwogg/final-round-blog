@@ -1,23 +1,35 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled, { css } from 'styled-components';
 
-import { useTheme } from '../utils/theme';
+const BlogPostTitle = styled.h2`
+  margin-bottom: 0;
+`;
 
-const PostTeaser = ({ post, theme }) => {
-  const {
+const BlogPostTeaser = styled.article`
+  ${({ theme }) => css`
+    margin-bottom: ${theme.baseSpacingUnit}px;
+  `}
+`;
+
+const PostTeaser = ({
+  post: {
     frontmatter: { path, title },
-  } = post;
+    excerpt,
+  },
+}) => {
   return (
-    <article
-      className="blog-post blog-post--teaser"
-      style={{ marginBottom: theme.baseSpacingUnit }}
-    >
-      <h3 className="blog-post-title" style={{ marginBottom: 8 }}>
+    <BlogPostTeaser>
+      <BlogPostTitle>
         <Link to={path}>{title}</Link>
-      </h3>
-      <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-    </article>
+      </BlogPostTitle>
+
+      <div
+        className="blog-post-excerpt"
+        dangerouslySetInnerHTML={{ __html: excerpt }}
+      />
+    </BlogPostTeaser>
   );
 };
 
-export default useTheme(PostTeaser);
+export default PostTeaser;

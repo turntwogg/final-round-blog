@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from './Container';
+import Text from './Text';
 
 const StyledFooter = styled.footer`
   background-color: #f1f1f1;
@@ -9,14 +10,15 @@ const StyledFooter = styled.footer`
   font-size: 14px;
 `;
 
+const date = new Date().getFullYear();
+
 const Footer = () => {
-  const date = new Date().getFullYear();
   return (
     <StyledFooter>
       <Container>
-        &copy; {date}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <Text style={{ marginBottom: 0 }}>
+          &copy; {date} All Rights Reserved.
+        </Text>
       </Container>
     </StyledFooter>
   );
