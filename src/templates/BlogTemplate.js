@@ -23,7 +23,6 @@ const BlogTemplate = ({
     markdownRemark: { frontmatter, html },
   },
 }) => {
-  console.log(frontmatter);
   return (
     <Layout>
       <article className="blog-post">
