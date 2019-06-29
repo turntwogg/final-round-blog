@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const LogoLink = styled(Link)`
   text-transform: uppercase;
   font-size: 20px;
+  color: inherit;
 `;
 const Logo = () => {
   return (

@@ -21,6 +21,13 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`lato`, `raleway\:400,700`],
+        display: 'swap',
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     {

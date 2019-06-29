@@ -12,9 +12,13 @@ const BlogPostTeaser = styled.article`
   `}
 `;
 
+const BlogDate = styled.p`
+  margin-bottom: 8px;
+`;
+
 const PostTeaser = ({
   post: {
-    frontmatter: { path, title },
+    frontmatter: { path, date, title },
     excerpt,
   },
 }) => {
@@ -23,7 +27,7 @@ const PostTeaser = ({
       <BlogPostTitle>
         <Link to={path}>{title}</Link>
       </BlogPostTitle>
-
+      <BlogDate>{date}</BlogDate>
       <div
         className="blog-post-excerpt"
         dangerouslySetInnerHTML={{ __html: excerpt }}

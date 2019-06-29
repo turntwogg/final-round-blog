@@ -12,9 +12,26 @@ const PostLink = styled(Link)`
 `;
 
 const BlogHero = styled.div`
-  max-height: 300px;
+  max-height: 200px;
   overflow: hidden;
   margin-bottom: 24px;
+`;
+
+const BlogDate = styled.p`
+  margin-bottom: 12px;
+  color: ${({ theme }) => theme.colors.grey};
+`;
+
+const BlogTitle = styled.h1`
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const BlogPostContent = styled.div`
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}px) {
+    font-size: 20px;
+  }
 `;
 
 const BlogTemplate = ({
@@ -31,11 +48,9 @@ const BlogTemplate = ({
             <Img fluid={frontmatter.hero.childImageSharp.fluid} />
           </BlogHero>
         )}
-        <h1 className="blog-post-title">{frontmatter.title}</h1>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <BlogTitle>{frontmatter.title}</BlogTitle>
+        <BlogDate>{frontmatter.date}</BlogDate>
+        <BlogPostContent dangerouslySetInnerHTML={{ __html: html }} />
         <div
           className="blog-post-links"
           style={{ marginBottom: 24, display: 'flex' }}
@@ -67,13 +82,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        hero {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
       }
     }
   }
