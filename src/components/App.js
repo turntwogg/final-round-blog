@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { ThemeProvider, css } from 'styled-components';
 
+import { ToastProvider, ToastContainer } from './Toast';
+
 import { theme } from '../utils/theme';
 
 const StyledApp = styled.div`
@@ -15,7 +17,12 @@ const StyledApp = styled.div`
 const App = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <StyledApp>{children}</StyledApp>
+      <ToastProvider>
+        <StyledApp>
+          {children}
+          <ToastContainer />
+        </StyledApp>
+      </ToastProvider>
     </ThemeProvider>
   );
 };
